@@ -31,10 +31,6 @@ def create_app(test_config=None):
     # Import and register the auth blueprint from the factory
     from . import auth
     app.register_blueprint(auth.bp)
-
-    # Import and register the data_storage blueprint from the factory
-    from . import data_storage
-    app.register_blueprint(data_storage.bp)
     app.add_url_rule('/', endpoint='index')
 
     return app

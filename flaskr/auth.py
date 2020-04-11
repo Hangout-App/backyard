@@ -32,10 +32,11 @@ def register():
 
         if error is None:
             cur.execute(
-                'INSERT INTO User (name, product, age, profile_picture, gender, city, state, country, email, password) '
-                'VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s)',
-                (request.json['name'], request.json['product'], request.json['age'], request.json['profile_picture'],
-                 request.json['gender'], request.json['city'], request.json['state'], request.json['country'], email,
+                'INSERT INTO User (userid, age, profile_picture, gender, city, state, country, bio, show_on_app, email,) '
+                'VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)',
+                (request.json['name'], request.json['age'], request.json['profile_picture'],
+                 request.json['gender'], request.json['city'], request.json['state'], request.json['country'],
+                 request.json['bio'], request.json['show_on_app'], email,
                  generate_password_hash(password))
             )
             db.commit()

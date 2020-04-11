@@ -16,7 +16,7 @@ MarkupSafe==1.1.1
 mongoengine==0.18.2
 monotonic==1.5
 pymongo==3.9.0
-PyMySQL==0.9.3
+pymysql==0.9.3
 requests==2.22.0
 six==1.12.0
 urllib3==1.25.6

@@ -1,5 +1,5 @@
 create TABLE `User` (
-  `userid` int PRIMARY KEY,
+  `id` int PRIMARY KEY,
   `password` varchar(255) NOT NULL,
   `name` varchar(255),
   `age` int,

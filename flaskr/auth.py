@@ -26,7 +26,7 @@ def register():
         elif not password:
             error = 'Password is required.'
         elif cur.execute(
-                'SELECT id FROM User WHERE email = %s', (email,)
+                'SELECT userid FROM User WHERE email = %s', (email,)
         ) != 0:
             error = 'User {} is already registered.'.format(email)
 

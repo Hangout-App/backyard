@@ -32,7 +32,7 @@ def register():
 
         if error is None:
             cur.execute(
-                'INSERT INTO User (userid, age, profile_picture, gender, city, state, country, bio, show_on_app, email,) '
+                'INSERT INTO User (userid, age, profile_picture, gender, city, state, country, bio, show_on_app, email,password) '
                 'VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)',
                 (request.json['name'], request.json['age'], request.json['profile_picture'],
                  request.json['gender'], request.json['city'], request.json['state'], request.json['country'],

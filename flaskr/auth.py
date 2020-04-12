@@ -42,7 +42,7 @@ def register():
             db.commit()
             return redirect(url_for('auth.login'))
 
-    return error
+    return "Success"
 
 
 @bp.route('/login', methods=('GET', 'POST'))
@@ -67,7 +67,7 @@ def login():
             session.clear()
             session['email'] = user[0]
             return session['email']
-    return ''
+    return 'Logged In'
 
 
 # This is called before any URL is requested

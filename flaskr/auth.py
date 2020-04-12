@@ -26,13 +26,13 @@ def register():
         elif not password:
             error = 'Password is required.'
         elif cur.execute(
-                'SELECT userid FROM User WHERE email = %s', (email,)
+                'SELECT id FROM User WHERE email = %s', (email,)
         ) != 0:
             error = 'User {} is already registered.'.format(email)
 
         if error is None:
             cur.execute(
-                'INSERT INTO User (userid, age, profile_picture, gender, city, state, country, bio, show_on_app, email,password) '
+                'INSERT INTO User (name, age, profile_picture, gender, city, state, country, bio, show_on_app, email, password) '
                 'VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)',
                 (request.json['name'], request.json['age'], request.json['profile_picture'],
                  request.json['gender'], request.json['city'], request.json['state'], request.json['country'],
